@@ -7,6 +7,8 @@ using namespace std;
 void min_hipfy(vector<double>& vetor, int posicao, int inicio, int fim);
 
 void Heap_sort(vector<double>& vetor, int inicio, int fim);
+
+void InsersionSort(vector<double>& vetor, int inicio, int fim);
        
 
 int main()
@@ -17,7 +19,7 @@ int main()
         cout << vetor[c] << " ";
     }
     
-    Heap_sort(vetor, 0, vetor.size()-1);
+    InsersionSort(vetor, 0, vetor.size()-1);
     cout << endl;
     
     for(int c = 0; c < vetor.size(); c++){
@@ -60,4 +62,19 @@ void Heap_sort(vector<double>& vetor, int inicio, int fim){
     }
 }
 
-
+void InsersionSort(vector<double>& vetor, int inicio, int fim){
+    int i = inicio + 1;
+    
+    for(int i = inicio + 1; i <= fim; i++){
+        int j = i-1;
+        
+        while(j >= inicio && vetor[j] > vetor[i]){
+            double aux = vetor[i];
+            
+            vetor[i] = vetor[j];
+            vetor[j] = aux;
+            j--;
+            i--;
+        }
+    }
+}
