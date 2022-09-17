@@ -1,0 +1,33 @@
+Impressão pré-ordem:
+
+void pre_ordem(Node* q){
+	if(q == NULL) retornar;
+	
+	imprime(q->valor);
+	pre_ordem(q->esq);
+	pre_ordem(q->dir);
+
+}
+
+
+Impressão em-ordem:
+
+void em_ordem(Node* q){
+	if(q == NULL) retornar;
+	
+	pre_ordem(q->esq);
+	imprime(q->valor);
+	pre_ordem(q->dir);
+
+}
+
+
+Impressão pos-ordem:
+
+void pos_ordem(Node* q){
+	if(q == NULL) retornar;
+	
+	pre_ordem(q->esq);
+	pre_ordem(q->dir);
+	imprime(q->valor);
+}
