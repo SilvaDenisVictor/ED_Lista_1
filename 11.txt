@@ -1,0 +1,52 @@
+Sendo r a raiz da árvore:
+pré-ordem não recursiva:
+
+void imprimir_arvore(raiz){
+	q = raiz;
+	
+	SENDO STACK UMA PILHA DE NODES;
+	
+	stack.push(q);
+
+	while(stack != vazio){
+		Node* q = stack.pop();
+
+		Imprime(q->valor);
+
+		if(q->esq != Null){
+			stack.push(q->dir);
+		}
+
+		if(q->dir != Null){
+			stack.push(q->esq);
+		}
+
+	}
+
+}
+
+por nível:
+
+void imprimir_arvore(raiz){
+	q = raiz;
+	
+	SENDO QUEUE UMA FILA DE NODES;
+	
+	queue.push(q);
+
+	while(stack != vazio){
+		node* q = queue.pop();
+		
+		imprime(q->valor);
+
+		if(q->esq != NULL){
+			queue.push(q->esq);
+		}
+
+		if(q->dir != NULL){
+			queue.push(q->dir);
+		}
+		
+	}
+
+}
