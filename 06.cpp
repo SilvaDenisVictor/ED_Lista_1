@@ -38,6 +38,7 @@ int main()
 }
 
 Dupla_Pilha::Dupla_Pilha(int n){
+    n++;
     for(int c = 0; c < n; c++){
         vetor.push_back(0);
     }
