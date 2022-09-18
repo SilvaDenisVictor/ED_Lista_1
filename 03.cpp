@@ -61,9 +61,9 @@ void Heap_sort(vector<double>& vetor, int inicio, int fim){
 }
 
 void InsersionSort(vector<double>& vetor, int inicio, int fim){
-    int i = inicio + 1;
+    int i;
     
-    for(int i = inicio + 1; i <= fim; i++){
+    for(i = inicio + 1; i <= fim; i++){
         int j = i-1;
         
         while(j >= inicio && vetor[j] > vetor[i]){
