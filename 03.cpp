@@ -1,5 +1,3 @@
-
-
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -13,13 +11,13 @@ void InsersionSort(vector<double>& vetor, int inicio, int fim);
 
 int main()
 {
-    vector<double> vetor = {10,9,8,7,6,5,4,3,2,1,0};
+    vector<double> vetor = {10,9,8,44,6,5,4,12,2,1,0};
  
     for(int c = 0; c < vetor.size(); c++){
         cout << vetor[c] << " ";
     }
     
-    InsersionSort(vetor, 0, vetor.size()-1);
+    Heap_sort(vetor, 0, vetor.size()-1);
     cout << endl;
     
     for(int c = 0; c < vetor.size(); c++){
@@ -40,8 +38,8 @@ void min_hipfy(vector<double>& vetor, int posicao, int inicio, int fim){
     int Dir = Esq + 1;
     int menor = posicao;
     
-    if(Esq <= fim && vetor[posicao] > vetor[Esq]) menor = Esq;
-    if(Dir <= fim && vetor[menor] > vetor[Dir]) menor = Dir;
+    if(Esq <= fim && vetor[posicao] < vetor[Esq]) menor = Esq;
+    if(Dir <= fim && vetor[menor] < vetor[Dir]) menor = Dir;
     if(posicao != menor){
         trocar(vetor[posicao], vetor[menor]);
         min_hipfy(vetor, menor, inicio, fim);
@@ -54,8 +52,8 @@ void Heap_sort(vector<double>& vetor, int inicio, int fim){
         min_hipfy(vetor, c, inicio, fim);
     }
     
-    for(int c = fim; c < inicio; c--){
-        trocar(vetor[inicio], vetor[fim]);
+    for(int c = fim; c > inicio; c--){
+        trocar(vetor[inicio], vetor[c]);
         
         fim = fim - 1;
         min_hipfy(vetor, inicio, inicio, fim);
