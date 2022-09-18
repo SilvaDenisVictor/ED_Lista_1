@@ -48,7 +48,7 @@ void heapfy(vector<int>& vetor, int inicio, int fim){
         minheapfy(vetor, c, inicio, fim);
     }
     
-    for(int c = 0; c < fim; c++){
+    for(int c = inicio; c < fim; c++){
         trocar(vetor[c], vetor[fim]);
         inicio++;
         minheapfy(vetor, fim, inicio, fim);
